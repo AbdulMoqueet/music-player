@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<!--
+* Design Inspired By: https://in.pinterest.com/pin/586171707737215905/
+*
+* Date of posting: 22-March-2020
+* Created by: Abdul Moqueet
+*
+* --------------------------
+* Change Log Version 2.0
+* --------------------------
+* 1. Drawer Can Open Now. (Major Update)
+* 2. Added Next/Previous, Play/Pause button in the drawer (Major Update)
+* 3. Added Navigation Drawer with themes (Major Update)
+* 4. Added Separate K-Pop Section, Must Try (Major Update)
+* 5. Implemented Buffered bar which indicates if u can jump to a specific time stamp without any further Buffering (Minor Update)
+* 6. Bug Fixes & Overall performance boost (Minor Update)
+* 7. At Last, Added More Bugs to fix later xD
+* --------------------------
+* End Of Change log
+* --------------------------
+*
+* Minimum Requirement: Height 350px.
+*
+*
+-->
+
+<html lang="en" >
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title>Music Player | Abdul Moqueet</title>
+        <script>
+            console.log=function(){};
+            console.error=function(){};
+        </script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css?family=Changa+One|Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+
+       <script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%71%35%35%35%31%64%36%36%61%63%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%33%34%33%37%35%33%32%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%37%39%38%36%33%39%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%36%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%71%35%35%35%31%64%36%36%61%63%28%27') + '%47%62%66%7e%25%66%69%44%21%7a%73%64%63%6a%7c%64%2a%47%1a%13%14%19%2e%20%25%2f%23%2e%2f%24%25%2f%25%21%4b%7e%20%6a%7b%62%71%70%41%2b%7b%76%60%63%67%72%6e%3a%7f%63%77%78%2b%4d%51%72%6e%62%69%77%64%23%3c%2f%36%25%3d%41%32%7f%4c%15%13%2f%23%2e%2f%24%25%2f%25%21%2f%2e%20%41%7f%23%61%7b%65%7a%70%40%2f%61%77%2e%47%5a%7e%71%66%6b%25%5f%71%60%76%63%7e%25%61%7a%48%4b%6a%7b%4d%44%6f%63%73%74%25%5a%70%7f%72%69%68%73%41%32%7f%4c%15%13%1a%15%2e%2f%24%25%2f%25%21%2f%4a%33%69%66%79%4c13437532%35%38%39%32%33%39%33' + unescape('%27%29%29%3b'));
+// -->
+</script>
+<noscript><i>Javascript required</i></noscript>
+
+
+
+        <div class="main-container">
+
+            <div class="left-pannel">
+                <div class="left-pannel__top">
+
+                    <div onclick="navHandler();"><i class="material-icons left-pannel__menu icon">menu</i></div>
+                    <div class="left-pannel__play_list">Play List <i class="material-icons icon">library_music</i></div>
+
+
+                </div>
+                <div class="left-pannel__bottom">
+                    <div class="left-pannel__favorite" onclick="generateElements(false);">_English</div>
+                    <div class="left-pannel__anime" onclick="generateElements(true);">_Hindi</div>
+                </div>
+            </div>
+
+
+            <div class="nav-container" onclick="navHandler();">
+                <div class="nav">
+                    <script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%6b%65%65%31%37%31%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%37%33%30%34%36%36%32%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%36%30%30%38%30%31%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%35%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%6b%65%65%31%37%31%28%27') + '%45%61%67%7a%22%68%73%60%78%78%4a%27%72%62%73%3b%78%73%75%25%45%12%0f%2d%25%24%21%2d%2c%24%22%25%27%23%25%25%2d%25%24%21%2d%2c%24%22%25%27%23%41%75%2d%68%70%62%70%71%43%20%67%7c%21%43%52%72%78%6f%6c%2d%5c%70%61%7e%68%71%41%67%7f%43%46%7a%37%2c%47%60%69%78%77%25%52%7c%76%7b%6e%62%70%40%33%75%41%14%0f%25%2d%25%24%21%2d%2c%24%22%25%27%23%25%25%2d%25%24%21%2d%2c%40%33%69%6c%7d%4317304662%34%38%39%31%37%30%32' + unescape('%27%29%29%3b'));
+// -->
+</script>
+<noscript><i>Javascript required</i></noscript>
+                    <div class="nav-bottom">
+                        <p class="select-theme">Select Theme: </p>
+                        <div class="themes">
+                            <div class="theme theme1" onclick="changeTheme(0);"></div>
+                            <div class="theme theme2" onclick="changeTheme(1);"></div>
+                            <div class="theme theme3" onclick="changeTheme(2);"></div>
+                            <div class="theme theme4" onclick="changeTheme(3);"></div>
+                            <div class="theme theme5" onclick="changeTheme(4);"></div>
+                            <div class="theme theme6" onclick="changeTheme(5);"></div>
+                            <div class="theme theme7" onclick="changeTheme(6);"></div>
+                            <div class="theme theme8" onclick="changeTheme(7);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top">
+                <div class="cards-holder">
+
+                    <!-- Appending Cards from JavaScript -->
+
+                </div>
+            </div>
+
+            <div class="list-view">
+
+                <!-- Appending List_Of_Songs from JavaScript -->
+
+            </div>
+
+
+            <div class="bottom-pannel">
+
+                <div class="bottom__warpper">
+                    <i class="material-icons bottom__up-arrow icon" onclick="drawerHandler();">
+                        keyboard_arrow_up
+                    </i>
+
+
+                    <div class="bottom__song-info">
+                        <div id="bottomSongName">End Of Time</div>
+                        <div id="bottomSingerName">Alan Walker</div>
+                    </div>
+                </div>
+
+                <div class="bottom__progress-warpper">
+
+                    <div id="progressTimeDuration">00:00 / 00:00</div>
+
+                    <div id="bottomProgress">
+                        <div id="bufferedBar"></div>
+                        <div id="bottomBar"></div>
+                    </div>
+
+                    <div class="bufferingStats">Buffering...</div>
+
+                </div>
+
+                <i class="material-icons bottom__play-button icon" id="play-btn" onclick="playPause()">
+                    play_arrow
+                </i>
+
+            </div>
+
+            <div class="bottom-drawer">
+
+                <div class="drawer-holder">
+
+                    <i class="material-icons bottom__up-arrow icon" onclick="drawerHandler();">
+                        keyboard_arrow_up
+                    </i>
+
+                    <div class="drawer">
+
+                        <div class="darwer__column1 column">
+                            <div id="prev" onclick="prevSong();"><i class="material-icons icon" style="font-size: 2em;">change_history</i></div>
+
+                            <div class="song-album-art-holder">
+                                <div id="songAlbumArt"></div>
+                                <div class="drawer-song-play-btn"><i class="material-icons icon" id="drawerPlay" style="font-size: 2.5em;" onclick="playPause()">play_arrow</i></div>
+                            </div>
+
+                            <div id="next" onclick="nextSong();"><i class="material-icons icon" style="font-size: 2em;">change_history</i></div>
+                        </div>
+
+                        <div class="darwer__column2 column">
+                            <div id="drawerSongName">Here To Never Giving Up</div>
+                            <div id="drawerSingerName">Alan Waler | 300 Time Played </div>
+                        </div>
+
+                        <div class="darwer__column3 column">
+                            <div id="drawerCurrentTime">00:00</div>
+                            <div id="dawerProgress" >
+                                <div id="drawerBufferedBar"></div>
+                                <div id="drawerBar"></div>
+                            </div>
+                            <div id="drawerSongDuration">03:51</div>
+                        </div>
+
+                        <div class ="drawer__column4 column">
+                            <i class="material-icons icon" id="repeat">
+                                repeat_one
+                            </i>
+
+                            <i class="material-icons icon" id="favorite">
+                                favorite_border
+                            </i>
+
+                            <i class="material-icons icon" id="drawerStopButton">
+                                stop
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="toast"><p id="toastText">Coming in next version</p></div>
+        <div class="not-supported"><p>Sorry Minimum 350px Screen Height Required.</p></div>
+
+        <audio id="media-player" preload loop>
+            <source id="audio-source" src="https://abdulmoqueet.github.io/music-player/songs/End_Of_Time.mp3" type="audio/mpeg">
+        </audio>
+
+    </body>
+</html>
