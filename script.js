@@ -162,7 +162,7 @@ var korean = [
     name: "Tajdar-e-Haram",
     singer: "Atif Aslam",
     duration: "09:51",
-    url: "songs/hindi/Tajdar-e-Haram_Atif_Aslam.mp3",
+    url: "songs/Hindi/Tajdar-e-Haram_Atif_Aslam.mp3",
     albumArt: "images/hindi/taj.jpg",
   },
 
